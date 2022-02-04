@@ -8,3 +8,6 @@ const { readAppend, readFromFile} = require('../helpers/fsHelpers');
 notes.get('/notes', (req, res) => {
     res.sendFile('../public/notes.html')
 }); 
+
+
+module.exports = notes;

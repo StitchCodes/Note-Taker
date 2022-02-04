@@ -8,3 +8,5 @@ const { readAppend, readFromFile} = require('../helpers/fsHelpers');
 index.get('/', (req, res) => {
     res.sendFIle('../public/index.html');
 });
+
+module.exports = index;
