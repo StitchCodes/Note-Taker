@@ -7,4 +7,4 @@ const { readAppend, readFromFile} = require('../helpers/fsHelpers');
 // GET ROUTE RESPONSE
 notes.get('/notes', (req, res) => {
     res.sendFile('../public/notes.html')
-});
+}); 
