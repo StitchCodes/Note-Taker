@@ -10,7 +10,7 @@ notes.get('/', (req, res) => {
 });
 
 notes.post('/', (req, res) => {
-    const { username, topic, tip } = req.body;
+    const {  title, text } = req.body;
 
     if (req.body) {
         const newNote = {

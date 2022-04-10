@@ -12,4 +12,8 @@ index.get('/', (req, res) => {
     res.sendFIle('../public/index.html');
 });
 
+notes.get('/', (req, res) => {
+    res.sendFile('../public/notes.html');
+});
+
 module.exports = index;
