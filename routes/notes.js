@@ -6,10 +6,11 @@ const { readAppend, readFromFile} = require('../helpers/fsHelpers');
 
 // GET ROUTE RESPONSE
 notes.get('/', (req, res) => {
-    readFromFile('./db/notesDB.json').then((data) => res.json(JSON.parse(data)));
-    res.sendFile('../public/notes.html');
+    readFromFile('../db/notesDB.json').then((data) => res.json(JSON.parse(data)));
 });
 
+
+// POST ROUTE NEW NOTES
 notes.post('/', (req, res) => {
     const {  title, text } = req.body;
 
@@ -19,14 +20,13 @@ notes.post('/', (req, res) => {
             text,
             tip_id: uuidv4(),
         };
-        console.log('New note: ', newNote)
 
-        readAndAppend(newNote, './db/notesDB.json');
+        readAppend(newNote, '../db/notesDB.json');
+
         res.json(`Note added successfully 🚀`);
     } else {
-        res.error('Error in adding tip');
+        res.error('Error in adding note');
     }
 });
-
 
 module.exports = notes;
