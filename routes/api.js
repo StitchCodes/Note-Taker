@@ -4,7 +4,7 @@ const api = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readAppend, readFromFile} = require('../helpers/fsHelpers');
 // REQUIRE DB
-const db = require('../db/db.json');
+const db = require('../db/notesDB.json');
 const notes = require('./notes');
 
 
@@ -26,7 +26,7 @@ api.post('/api/notes', (req, res) => {
         tip_id: uuidv4()
     };
 
-    readAppend(newNote, '../db/db.json');
+    readAppend(newNote, '../db/notesDB.json');
     res.json('Note added successfully');
     } else {
         res.error('Error adding note.')
