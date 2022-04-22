@@ -1,6 +1,1 @@
-[
-    {
-        "title":"First Note",
-        "text":"Placeholder for the first note"
-    }
-]
+[{"title":"First Note","text":"Placeholder for the first note"},{"title":"New note","text":"this is a new note","tip_id":"7c8706da-b26f-409c-aac6-8b4c70727379"},{"title":"This is a new note","text":"This is a new note\n","note_id":"d7f19146-d482-4e95-835d-318d0e1812f6"}]
