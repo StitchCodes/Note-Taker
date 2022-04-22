@@ -2,19 +2,20 @@
 const notes = require('express').Router();
 // REQUIRE HELPERS
 const { readAppend, readFromFile} = require('../helpers/fsHelpers');
+const { v4: uuidv4 } = require('uuid');
 
 
-// GET ROUTE RESPONSE
+// GET route for retreiving all
 notes.get('/', (req, res) => {
     readFromFile('./db/notesDB.json').then((data) => res.json(JSON.parse(data)));
 });
 
 
-// POST ROUTE NEW NOTES
+// POST route for new notes
 notes.post('/', (req, res) => {
-    const {  title, text } = req.body;
+    const { title, text } = req.body;
 
-    if (req.body) {
+    if ( title && text) {
         const newNote = {
             title,
             text,

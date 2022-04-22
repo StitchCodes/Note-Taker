@@ -1,19 +1,11 @@
-// REQUIRE & CREATE ROUTER
-const index = require('express').Router();
-const notes = require('./notes.js');
-const api = require('./api.js');
+// Require Express
+const express = require('express');
 
-// REQUIRE HELPERS
-const { readAppend, readFromFile} = require('../helpers/fsHelpers');
+// Modular Routes Import
+const notesRouter = require('./notes');
 
+const app = express();
 
-// GET ROUTE RESPONSE
-index.get('/', (req, res) => {
-    res.sendFIle('../public/index.html');
-});
+app.use('/notes', notesRouter);
 
-notes.get('/', (req, res) => {
-    res.sendFile('../public/notes.html');
-});
-
-module.exports = index;
+module.exports = app;
