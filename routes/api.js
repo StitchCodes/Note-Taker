@@ -9,12 +9,12 @@ const notes = require('./notes');
 
 
 // GET ROUTE RESPONSE
-api.get('/notes', (req, res) => {
+api.get('/', (req, res) => {
     res.json(db);
 });
 
 // POST API ROUTE
-api.post('/notes', (req, res) => {
+api.post('/', (req, res) => {
     const {  title, text } = req.body;
 
     if (req.body) {
@@ -24,7 +24,7 @@ api.post('/notes', (req, res) => {
             tip_id: uuidv4(),
         };
 
-        readAppend(newNote, '../db/notesDB.json');
+        readAppend(newNote, './db/notesDB.json');
         res.json(`Note added successfully 🚀`);
     } else {
         res.error('Error in adding note');
